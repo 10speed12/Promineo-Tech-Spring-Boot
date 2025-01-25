@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,12 +23,10 @@ public class PetStore {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long petStoreId;
 	private String petStoreName;
-	@Column(unique = true)
 	private String petStoreAddress;
 	private String petStoreCity;
 	private String petStoreState;
 	private String petStoreZip;
-	@Column(unique = true)
 	private String petStorePhone;
 	
 	@EqualsAndHashCode.Exclude
