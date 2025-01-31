@@ -23,4 +23,22 @@ public class GlobalErrorHandler {
 		map.put("message",ex.toString());
 		return map;
 	}
+	@ExceptionHandler(UnsupportedOperationException.class)
+	@ResponseStatus(code = HttpStatus.METHOD_NOT_ALLOWED)
+	public Map<String,String> handleUnsupportedOperationException(UnsupportedOperationException ex) {
+		Map<String,String> map = new HashMap<String,String>();
+		log.info("UnsupportedOperationException occured.");
+		map.put("message",ex.toString());
+		return map;
+	}
+	/*
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
+	public Map<String,String> handleException(Exception ex) {
+		Map<String,String> map = new HashMap<String,String>();
+		log.info("Unchecked Exception occured.");
+		map.put("message",ex.toString());
+		return map;
+	}
+	*/
 }

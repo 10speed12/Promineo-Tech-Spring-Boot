@@ -22,10 +22,10 @@ public class PetStoreData {
 	private String petStoreZip;
 
 	private String petStorePhone;
-
-	private Set<PetStoreEmployee> employees = new HashSet<>();
 	
 	private Set<PetStoreCustomer> customers = new HashSet<>();
+	private Set<PetStoreEmployee> employees = new HashSet<>();
+	
 	// Constructor for creating from a petStore object:
 	public PetStoreData(PetStore petStore){
 		petStoreId = petStore.getPetStoreId();
